@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SimpleAPI.Data;
 using SimpleAPI.Models;
@@ -7,7 +6,7 @@ using SimpleAPI.ViewModels;
 
 namespace SimpleAPI.Controllers;
 
-[Route("/v1")]
+[Route("v1")]
 [ApiController]
 public class PersonController : ControllerBase
 {
@@ -47,11 +46,30 @@ public class PersonController : ControllerBase
             await context.Persons.AddAsync(person);
             await context.SaveChangesAsync();
 
-            return Created($"v1/persons/{person.Id}", person);
+            return Created($"/persons/{person.Id}", person);
         }
-        catch (Exception e)
+        catch (Exception) { return BadRequest(); }
+    }
+
+    [HttpPut("persons/{id}")]
+    public async Task<IActionResult> PutAsync([FromServices] AppDbContext context, [FromBody] CreatePersonViewModel model, [FromRoute] int id)
+    {
+        var person = await context.Persons.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+
+        if (person == null) 
+            return NotFound();
+
+        try
         {
-            return BadRequest();
+            person.Adress = model.Adress;
+            person.Name = model.Name;
+            person.Phone = model.Phone;
+
+            context.Persons.Update(person);
+            await context.SaveChangesAsync();
+
+            return Ok();
         }
+        catch (Exception) { return BadRequest(); }
     }
 }
