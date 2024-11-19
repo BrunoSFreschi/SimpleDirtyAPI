@@ -78,7 +78,7 @@ A tabela Entidades no SQLite contém as seguintes colunas:
 
 Id: Identificador único (chave primária)
 
-- int
+- Id
 - Name 
 - Phone 
 - Adress 
