@@ -77,9 +77,12 @@ Exemplo de payload JSON para criação de uma nova entidade:
 A tabela Entidades no SQLite contém as seguintes colunas:
 
 Id: Identificador único (chave primária)
-- Name
-- Phone
-- Adress
+
+- int
+- Name 
+- Phone 
+- Adress 
+- CreateAt
 
 ## Contribuição
 Para contribuir com o projeto:
