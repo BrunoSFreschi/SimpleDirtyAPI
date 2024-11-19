@@ -41,13 +41,31 @@ O projeto está organizado da seguinte forma:
    ```bash
    dotnet ef database update
 
+## Endpoints
+A API fornece os seguintes endpoints para manipulação dos dados:
+
+    GET /api/entidades
+Retorna uma lista de todas as entidades.
+
+    GET /api/entidades/{id}
+Retorna uma entidade específica pelo id.
+
+    POST /api/entidades
+Cria uma nova entidade. Requer um payload JSON com os dados da entidade.
+
+    PUT /api/entidades/{id}
+Atualiza uma entidade existente pelo id. Requer um payload JSON com os dados atualizados.
+
+    DELETE /api/entidades/{id}
+Deleta uma entidade pelo id.
+
 ## Estrutura de Banco de Dados
 A tabela Entidades no SQLite contém as seguintes colunas:
 
 Id: Identificador único (chave primária)
-Name: Nome
-Phone: Telefone
-Adress: Endereço
+- Name
+- Phone
+- Adress
 
 ## Contribuição
 Para contribuir com o projeto:
