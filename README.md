@@ -59,6 +59,20 @@ Atualiza uma entidade existente pelo id. Requer um payload JSON com os dados atu
     DELETE /api/entidades/{id}
 Deleta uma entidade pelo id.
 
+## Exemplo de Uso
+Faça uma requisição GET para obter todas as entidades:
+
+    curl -X GET https://localhost:5001/api/entidades
+
+Exemplo de payload JSON para criação de uma nova entidade:
+
+    {
+      "nome": "Qwert dos Qwert de Qwert",
+      "phone": "000000000",
+      "adress":"qwert qwert"
+    }
+
+
 ## Estrutura de Banco de Dados
 A tabela Entidades no SQLite contém as seguintes colunas:
 
