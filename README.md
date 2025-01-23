@@ -99,4 +99,4 @@ Este projeto é licenciado sob a MIT License.
 ## Contato
 Em caso de dúvidas ou sugestões, entre em contato:
 
-Você leu até o final e chegou aqui? Parabéns! Agora, se tiver dúvidas, você já sabe quem chamar...
+Você chegou aqui? Parabéns! Agora, se tiver dúvidas, você já sabe quem chamar. . .
